@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/all_books.css') }}">
+</head>
+<body>
+<h1>{{ title }}</h1>
+<div class="books">
+  {% for book in books %}
+  {% if book.isStock == True %}
+  <div class="book">
+    <p class="book__name">{{ book.name }}</p>
+    <p class="book__author">{{ book.author }}</p>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+</body>
+</html>

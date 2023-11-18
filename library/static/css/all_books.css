@@ -1,0 +1,13 @@
+.books {
+    display: flex;
+    gap: 10px;
+}
+
+.book {
+    border: 1px solid green;
+    padding: 15px;
+}
+
+.book__name {
+    font-weight: 600;
+}
