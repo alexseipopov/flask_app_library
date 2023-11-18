@@ -2,20 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/all_books.css') }}">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all_books.css') }}">
 </head>
 <body>
-<h1>{{ title }}</h1>
-<div class="books">
-  {% for book in books %}
-  {% if book.isStock == True %}
-  <div class="book">
-    <p class="book__name">{{ book.name }}</p>
-    <p class="book__author">{{ book.author }}</p>
-  </div>
-  {% endif %}
-  {% endfor %}
-</div>
+<header>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png')}}" alt="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/add_book">Add Book</a></li>
+                    <li><a href="/all_books">All Books</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <h1>All Books</h1>
+        <div class="books">
+            {% for book in books %}
+            {% if book.isStock == True %}
+            <div class="book">
+                <p class="book__name">{{ book.name }}</p>
+                <p class="book__author">{{ book.author }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+
 </body>
 </html>

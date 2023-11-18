@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_book.css') }}">
+</head>
+<body>
+<main>
+  <div class="add-book__form">
+      <form action="/add_book" method="post">
+          {{ form.hidden_tag() }}
+          {{ form.name.label }} {{ form.name() }}
+          {{ form.author.label }} {{ form.author() }}
+          {{ form.isStock.label }} {{ form.isStock() }}
+          {{ form.submit() }}
+      </form>
+  </div>
+</main>
+</body>
+</html>
