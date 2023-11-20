@@ -1,0 +1,42 @@
+.register__form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #F7F7F7;
+    border-radius: 8px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.flashes {
+    background-color: #efefef;
+    border-radius: 5px;
+    padding: 10px;
+    list-style: none;
+}
+
+.error {
+    background-color: #f5aaaa;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #aaf5aa;
+    padding: 5px;
+    border-radius: 5px;
+}
