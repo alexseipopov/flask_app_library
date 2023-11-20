@@ -14,6 +14,7 @@
             <div class="book">
                 <p class="book__name">{{ book.title }}</p>
                 <p class="book__author">{{ book.author }}</p>
+                <a href="/books/{{ book.id }}">Open</a>
             </div>
             {% endif %}
             {% endfor %}

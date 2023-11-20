@@ -44,10 +44,10 @@ def get__all_books():
 
 @books.route("/books/<int:id>")
 def get_book(id):
-
-    if id < len(all_books):
-        return render_template("book.html", title=all_books[id])
-    return "None"
+    book = Book.query.filter_by(id=id).first()
+    if book:
+        return render_template("book.html", title=book.title, book=book)
+    return redirect("/books")
 
 
 @books.route("/add_book", methods=["GET", "POST"])

@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>{{ title }}</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/book.css') }}">
+{% endblock style %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <h1>{{ book.title }}</h1>
+        <div class="books">
+            <p class="book__author">{{ book.author }}</p>
+        </div>
+    </div>
+</main>
+{% endblock content %}
