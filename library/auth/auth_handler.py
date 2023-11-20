@@ -1,5 +1,5 @@
 from library import db
-from library.models.user import User
+from library.models.all_models import User
 from flask import redirect, render_template, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField

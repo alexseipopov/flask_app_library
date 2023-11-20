@@ -1,9 +1,10 @@
 from . import books
+from library import db
 from flask import render_template, redirect
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, SubmitField
 from wtforms.validators import DataRequired
-from library.models.user import User
+from library.models.all_models import User, Book
 
 
 all_books = [{
@@ -37,6 +38,7 @@ def index():
 
 @books.route("/books")
 def get__all_books():
+    all_books = Book.query.all()
     return render_template("all_books.html", title="All Books", books=all_books)
 
 
@@ -55,10 +57,9 @@ def add_book():
         name = form.name.data
         author = form.author.data
         isStock = form.isStock.data
-        all_books.append({
-            "name": name,
-            "author": author,
-            "isStock": isStock
-        })
+        user_id = 1
+        book = Book(title=name, author=author, is_stock=isStock, user_id=user_id)
+        db.session.add(book)
+        db.session.commit()
         return redirect("/books")
     return render_template("add_book.html", title="Add Book", form=form)

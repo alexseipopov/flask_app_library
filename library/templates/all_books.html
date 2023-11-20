@@ -10,9 +10,9 @@
         <h1>All Books</h1>
         <div class="books">
             {% for book in books %}
-            {% if book.isStock == True %}
+            {% if book.is_stock == True %}
             <div class="book">
-                <p class="book__name">{{ book.name }}</p>
+                <p class="book__name">{{ book.title }}</p>
                 <p class="book__author">{{ book.author }}</p>
             </div>
             {% endif %}
